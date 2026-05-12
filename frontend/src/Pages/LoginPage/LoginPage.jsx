@@ -33,7 +33,7 @@ export default function LoginPage() {
       }
 
       const response = await service.post(GOOGLE_AUTH_LOGIN, { token });
-      const data = response.data;
+      const data = response.data.data;
 
       dispatch(
         setUser({
