@@ -6,6 +6,7 @@ import {
 } from "@mantine/core";
 import "@mantine/core/styles.css";
 import { GoogleLogin } from "@react-oauth/google";
+import { GoogleOAuthProvider } from "@react-oauth/google";
 import { showNotification } from "@mantine/notifications";
 import Service from "../../utils/http";
 import { GOOGLE_AUTH_LOGIN } from "../../utils/urls";
@@ -33,7 +34,7 @@ export default function LoginPage() {
       }
 
       const response = await service.post(GOOGLE_AUTH_LOGIN, { token });
-      const data = response.data.data;
+      const data = response.data;
 
       dispatch(
         setUser({
